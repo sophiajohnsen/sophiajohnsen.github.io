@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophia Johnsen. Journalismus und Datenjournalismus</title>
+<meta name="description" content="Portfolio von Sophia Johnsen. Artikel, Podcasts und datenjournalistische Stories.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5f2e9;
+    --paper-dim:#eeeadf;
+    --ink:#211d19;
+    --ink-soft:#514a42;
+    --oxblood:#7c2e2c;
+    --pine:#2c4a41;
+    --rule:#cbc2ac;
+    --rule-light:#ddd6c4;
+    --max:1100px;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+
+  h1,h2,h3{
+    font-family:'Newsreader', Georgia, serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+
+  a{
+    color:var(--pine);
+    text-decoration-color: color-mix(in srgb, var(--pine) 45%, transparent);
+    text-underline-offset:3px;
+  }
+
+  a:hover{ color: var(--oxblood); }
+
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* Masthead */
+
+  .masthead{
+    border-bottom:3px solid var(--ink);
+    padding-top:34px;
+    padding-bottom:18px;
+  }
+
+  .masthead .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:18px;
+  }
+
+  .wordmark{
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    letter-spacing:-0.01em;
+  }
+
+  .wordmark span{
+    display:block;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.95rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-top:4px;
+    letter-spacing:0.02em;
+  }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:26px;
+    margin:0;
+    padding:0;
+    font-size:0.98rem;
+  }
+
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    padding-bottom:3px;
+    border-bottom:2px solid transparent;
+  }
+
+  nav a:hover{
+    border-bottom-color:var(--oxblood);
+    color:var(--ink);
+  }
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--ink);
+    padding:8px 12px;
+    font-family:inherit;
+    font-size:0.95rem;
+    cursor:pointer;
+    color:var(--ink);
+  }
+
+  /* Hero / Vorstellung */
+
+  .hero{
+    padding:64px 0 56px;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:start;
+  }
+
+  .hero .kicker{
+    color:var(--oxblood);
+    font-weight:500;
+    font-size:0.98rem;
+    margin-bottom:10px;
+  }
+
+  .hero h1{
+    font-size:clamp(1.9rem, 3.4vw, 2.6rem);
+    line-height:1.25;
+    margin-bottom:22px;
+    max-width:20ch;
+  }
+
+  .hero p{
+    max-width:56ch;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+
+  .hero-meta{
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--rule-light);
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 22px;
+  }
+
+  .hero-figure{
+    position:relative;
+  }
+
+  .hero-figure img{
+    width:100%;
+    border:1px solid var(--ink);
+    filter:grayscale(12%);
+  }
+
+  .hero-figure figcaption{
+    margin-top:10px;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    border-left:2px solid var(--oxblood);
+    padding-left:10px;
+  }
+
+  /* Projekte */
+
+  .projects{
+    padding:60px 0 70px;
+  }
+
+  .projects .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:32px;
+    padding-bottom:14px;
+    border-bottom:2px solid var(--ink);
+  }
+
+  .projects h2{
+    font-size:1.7rem;
+  }
+
+  .section-head .sub{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0;
+  }
+
+  .project{
+    padding:0 26px;
+    border-left:1px solid var(--rule);
+  }
+
+  .project:first-child{
+    padding-left:0;
+    border-left:none;
+  }
+
+  .project:last-child{
+    padding-right:0;
+  }
+
+  .project .outlet{
+    font-size:0.86rem;
+    color:var(--pine);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+
+  .project h3{
+    font-size:1.28rem;
+    line-height:1.35;
+    margin-bottom:12px;
+  }
+
+  .project p{
+    color:var(--ink-soft);
+    font-size:0.96rem;
+    margin-bottom:16px;
+  }
+
+  .project .date{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+    display:block;
+  }
+
+  .project a.read{
+    font-size:0.93rem;
+    font-weight:500;
+    text-decoration:none;
+    border-bottom:2px solid var(--oxblood);
+    padding-bottom:2px;
+  }
+
+  /* Kontakt */
+
+  .contact{
+    background:var(--ink);
+    color:var(--paper);
+    padding:52px 0;
+  }
+
+  .contact .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+
+  .contact h2{
+    color:var(--paper);
+    font-size:1.6rem;
+  }
+
+  .contact a{
+    color:var(--paper);
+    font-size:1.15rem;
+  }
+
+  .contact a:hover{
+    color:#e7b9a8;
+  }
+
+  /* Footer / rechtliches */
+
+  footer{
+    padding:34px 0 50px;
+    font-size:0.87rem;
+    color:var(--ink-soft);
+  }
+
+  footer .legal-links{
+    display:flex;
+    gap:20px;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+  }
+
+  footer .legal-links a{
+    color:var(--ink-soft);
+  }
+
+  .legal-block{
+    max-width:70ch;
+    display:none;
+    border-top:1px solid var(--rule-light);
+    padding-top:18px;
+    margin-top:18px;
+  }
+
+  .legal-block.open{
+    display:block;
+  }
+
+  .legal-block h3{
+    font-size:1rem;
+    margin-bottom:8px;
+    color:var(--ink);
+  }
+
+  .legal-block p{
+    margin:0 0 10px;
+  }
+
+  .copyright{
+    margin-top:24px;
+    color:var(--ink-soft);
+  }
+
+  /* Responsive */
+
+  @media (max-width: 860px){
+    .hero .wrap{
+      grid-template-columns:1fr;
+    }
+    .hero-figure{
+      order:-1;
+      max-width:280px;
+    }
+    .project-grid{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+    .project{
+      border-left:none;
+      padding:0;
+      border-top:1px solid var(--rule);
+      padding-top:26px;
+    }
+    .project:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+  }
+
+  @media (max-width: 680px){
+    nav{
+      display:none;
+      width:100%;
+    }
+    nav.open{
+      display:block;
+    }
+    nav ul{
+      flex-direction:column;
+      gap:14px;
+      padding:18px 0 6px;
+      border-top:1px solid var(--rule);
+      margin-top:14px;
+    }
+    .masthead .wrap{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    .nav-toggle{
+      display:inline-block;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="wordmark">
+      Sophia Johnsen
+      <span>Politikwissenschaft &middot; Journalismus &middot; Daten</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false">Menü</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#start">Start</a></li>
+        <li><a href="#projekte">Projekte</a></li>
+        <li><a href="#ueber-mich">Über mich</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="start">
+  <div class="wrap">
+    <div>
+      <div class="kicker" id="ueber-mich">Vorstellung</div>
+      <h1>Politik verständlich machen, mit Texten, Ton und Daten.</h1>
+      <p>Ich studiere Politikwissenschaft im zweiten Semester an der Universität Hamburg und arbeite parallel als Werkstudentin im B2B Marketing der SPIEGEL Gruppe. Journalistisch schreibe ich als Redakteurin für politikorange und als freie Autorin für das GENZ Magazin, herausgegeben von der Landeszentrale für politische Bildung Hamburg.</p>
+      <p>Mich interessiert vor allem, wie sich politische Zusammenhänge mit Daten belegen und erzählen lassen. Für 2027 habe ich bereits ein Praktikum im Bereich Datenjournalismus zugesagt bekommen, auf das ich mich mit eigenen kleinen Projekten wie dieser Seite vorbereite.</p>
+      <div class="hero-meta">
+        <span>Hamburg</span>
+        <span>Politikwissenschaft, Universität Hamburg</span>
+        <span>GENZ Magazin &middot; politikorange &middot; SPIEGEL Gruppe</span>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="assets/img/sophia.jpg" alt="Porträt von Sophia Johnsen" width="1200" height="1600">
+      <figcaption>Sophia Johnsen, aufgenommen für politikorange</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="projects" id="projekte">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Zuletzt veröffentlicht</h2>
+      <div class="sub">Drei aktuelle Arbeiten, ausführlich verlinkt bei den jeweiligen Redaktionen</div>
+    </div>
+    <div class="project-grid">
+
+      <article class="project">
+        <div class="outlet">GENZ Magazin, Datenstory</div>
+        <span class="date">Titel und Datum ergänzen</span>
+        <h3>Titel des Projekts einfügen</h3>
+        <p>Kurze Zusammenfassung in ein bis zwei Sätzen, worum es in der Story geht und welche Datenquelle verwendet wurde.</p>
+        <a class="read" href="#">Artikel lesen</a>
+      </article>
+
+      <article class="project">
+        <div class="outlet">politikorange, Artikel</div>
+        <span class="date">Titel und Datum ergänzen</span>
+        <h3>Titel des Projekts einfügen</h3>
+        <p>Kurze Zusammenfassung in ein bis zwei Sätzen, welche Fragestellung der Artikel behandelt und für wen er relevant ist.</p>
+        <a class="read" href="#">Artikel lesen</a>
+      </article>
+
+      <article class="project">
+        <div class="outlet">Podcast</div>
+        <span class="date">Titel und Datum ergänzen</span>
+        <h3>Titel der Folge einfügen</h3>
+        <p>Kurze Zusammenfassung der Episode, mit wem gesprochen wurde und welches Thema im Mittelpunkt steht.</p>
+        <a class="read" href="#">Folge anhören</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <h2>Anfragen und Zusammenarbeit</h2>
+    <a href="mailto:sophiajohnsen@outlook.de">sophiajohnsen@outlook.de</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="legal-links">
+      <a href="#" onclick="toggleLegal(event, 'impressum')">Impressum</a>
+      <a href="#" onclick="toggleLegal(event, 'datenschutz')">Datenschutz</a>
+    </div>
+
+    <div class="legal-block" id="impressum">
+      <h3>Impressum</h3>
+      <p>Angaben gemäß Paragraf 5 TMG.</p>
+      <p>Sophia Johnsen<br>Straße und Hausnummer einfügen<br>Postleitzahl und Ort einfügen</p>
+      <p>Kontakt: <a href="mailto:sophiajohnsen@outlook.de">sophiajohnsen@outlook.de</a></p>
+      <p>Verantwortlich für den Inhalt nach Paragraf 55 Absatz 2 RStV: Sophia Johnsen, Anschrift wie oben.</p>
+    </div>
+
+    <div class="legal-block" id="datenschutz">
+      <h3>Datenschutzerklärung</h3>
+      <p>Diese Website wird über GitHub Pages gehostet. Beim Aufruf der Seite kann GitHub technisch bedingt Zugriffsdaten wie IP Adresse, Datum und Uhrzeit verarbeiten. Näheres dazu in der Datenschutzerklärung von GitHub.</p>
+      <p>Es werden auf dieser Seite keine eigenen Cookies gesetzt und keine Analysewerkzeuge eingebunden. Bei Kontaktaufnahme per E Mail werden die übermittelten Daten ausschließlich zur Bearbeitung der Anfrage genutzt.</p>
+      <p>Diesen Text bitte vor Veröffentlichung von einer sachkundigen Stelle prüfen lassen, insbesondere wenn später Analyse oder Einbettungsdienste hinzukommen.</p>
+    </div>
+
+    <div class="copyright">© 2026 Sophia Johnsen. Alle Texte und Bilder, sofern nicht anders gekennzeichnet.</div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+
+  navToggle.addEventListener('click', function(){
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  function toggleLegal(event, id){
+    event.preventDefault();
+    const target = document.getElementById(id);
+    const wasOpen = target.classList.contains('open');
+    document.querySelectorAll('.legal-block').forEach(function(block){
+      block.classList.remove('open');
+    });
+    if(!wasOpen){
+      target.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>
