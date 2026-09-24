@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Braucht die Oper einen Splitscreen? – Sophia Johnsen</title>
+<meta name="description" content="Was macht es mit einer Gesellschaft, die sich an zehnsekündige Reels gewöhnt hat, wenn sie einem Opernabend folgt? Sophia Johnsen über Aufmerksamkeit, Oper und die Frage nach dem Splitscreen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5f2e9;
+    --paper-dim:#eeeadf;
+    --ink:#211d19;
+    --ink-soft:#514a42;
+    --oxblood:#7c2e2c;
+    --pine:#2c4a41;
+    --rule:#cbc2ac;
+    --rule-light:#ddd6c4;
+    --max:1100px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+
+  h1,h2,h3{
+    font-family:'Newsreader', Georgia, serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+
+  a{
+    color:var(--pine);
+    text-decoration-color: color-mix(in srgb, var(--pine) 45%, transparent);
+    text-underline-offset:3px;
+  }
+  a:hover{ color: var(--oxblood); }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* Masthead */
+  .masthead{
+    border-bottom:3px solid var(--ink);
+    padding-top:34px;
+    padding-bottom:18px;
+  }
+  .masthead .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:18px;
+  }
+  .wordmark{
+    font-family:'Newsreader', Georgia, serif;
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    font-weight:500;
+    text-decoration:none;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  .wordmark span{
+    display:block;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.95rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-top:4px;
+    letter-spacing:0.02em;
+  }
+  .back-link{
+    font-size:0.93rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:2px;
+  }
+  .back-link:hover{ color:var(--oxblood); border-bottom-color:var(--oxblood); }
+
+  /* Artikel-Layout */
+  .article-wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .article-header{
+    padding:56px 0 36px;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:40px;
+  }
+
+  .article-kicker{
+    color:var(--oxblood);
+    font-weight:600;
+    font-size:0.88rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+
+  .article-header h1{
+    font-size:clamp(1.9rem, 4vw, 2.8rem);
+    line-height:1.2;
+    margin-bottom:20px;
+  }
+
+  .article-anleser{
+    font-family:'Newsreader', Georgia, serif;
+    font-size:1.15rem;
+    line-height:1.6;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-bottom:24px;
+    border-left:3px solid var(--oxblood);
+    padding-left:18px;
+  }
+
+  .article-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 20px;
+    font-size:0.88rem;
+    color:var(--ink-soft);
+    padding-top:20px;
+    border-top:1px solid var(--rule-light);
+  }
+
+  /* Produktionshinweis */
+  .production-note{
+    background:var(--paper-dim);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--pine);
+    padding:14px 18px;
+    margin-bottom:36px;
+    font-size:0.88rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .production-note strong{
+    color:var(--ink);
+  }
+
+  /* Fließtext */
+  .article-body{
+    margin-bottom:56px;
+  }
+
+  .article-body p{
+    margin:0 0 22px;
+    color:var(--ink);
+  }
+
+  .article-body h2{
+    font-size:1.35rem;
+    margin:40px 0 14px;
+    padding-top:30px;
+    border-top:1px solid var(--rule-light);
+  }
+
+  .article-body em{
+    font-style:italic;
+  }
+
+  /* Zitate */
+  .quote-block{
+    margin:30px 0;
+    padding:0 0 0 22px;
+    border-left:3px solid var(--oxblood);
+  }
+  .quote-block p{
+    font-family:'Newsreader', Georgia, serif;
+    font-size:1.12rem;
+    font-style:italic;
+    color:var(--ink-soft);
+    margin:0 0 8px;
+  }
+  .quote-block cite{
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    font-style:normal;
+  }
+
+  /* Artikel-Footer */
+  .article-footer{
+    border-top:2px solid var(--ink);
+    padding:28px 0 56px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .article-footer a{
+    font-size:0.95rem;
+    font-weight:500;
+  }
+  .article-outlet{
+    font-size:0.88rem;
+    color:var(--ink-soft);
+  }
+
+  /* Footer */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:36px 0;
+    font-size:0.87rem;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  footer a{
+    color:#e7b9a8;
+  }
+
+  @media(max-width:600px){
+    .article-header{padding:36px 0 28px;}
+    .article-footer{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">
+      Sophia Johnsen
+      <span>Politikwissenschaft &middot; Journalismus &middot; Daten</span>
+    </a>
+    <a href="index.html#projekte" class="back-link">← Alle Projekte</a>
+  </div>
+</header>
+
+<main>
+  <div class="article-wrap">
+
+    <header class="article-header">
+      <div class="article-kicker">GENZ Magazin &middot; Kulturjournalismus</div>
+      <h1>Braucht die Oper einen Splitscreen?</h1>
+      <p class="article-anleser">Was macht es mit einer Gesellschaft, die sich zunehmend an zehnsekündige Reels und Splitscreens gewöhnt, wenn sie für einige Stunden einem Geschehen auf der Bühne folgt? Und war die Oper mit ihrer Gleichzeitigkeit von Musik, Text und Szene nicht schon immer eine Kunstform geteilter Aufmerksamkeit?</p>
+      <div class="article-meta">
+        <span>von Sophia Johnsen</span>
+        <span>GENZ Magazin</span>
+        <span>2026</span>
+      </div>
+    </header>
+
+    <div class="production-note">
+      <strong>Recherche und Interviews:</strong> Dieser Artikel entstand auf Basis eigener Recherche und Interviews, die ich selbst initiiert, vorbereitet und geführt habe – mit Dr. Gloria Mark (UC Irvine), Prof. Dr. Christian Montag (University of Macau), Prof. Dr. Wolf-Dieter Ernst (Universität Bayreuth) und Prof. Dr. Peter Marx (Universität zu Köln).
+    </div>
+
+    <div class="article-body">
+
+      <p>Wahrscheinlich wirst du diesen Artikel nicht bis zum Ende lesen, zwischendurch auf dein Smartphone schauen oder mit jemandem quatschen. Einer Aktivität mit Konzentration bis zum Ende nachgehen, das schafft unsere Aufmerksamkeit doch gar nicht mehr, oder etwa doch?</p>
+
+      <p>Im Theater Bonn wurde Ludwig van Beethovens Oper <em>Fidelio</em> in einer Greenbox inszeniert, das Publikum blickte über weite Strecken auf eine Leinwand statt auf die Bühne. Die Staatsoper Unter den Linden Berlin verwandelte sich für die filmische Oper <em>Melancholie des Widerstands</em> zeitweise in einen Kinosaal. Die Darsteller*innen wurden live hinter einer Leinwand gefilmt. Auch an der Hamburgischen Staatsoper wird erprobt, wie Animation, Film und Live-Projektion Teil des Bühnenraums werden können.</p>
+
+      <p>Dabei geht es nicht darum, Oper mit technischen Mitteln „hipper" zu machen oder auf vermeintlich kürzere Aufmerksamkeitsspannen zu reagieren. Oper war immer auch ein Ort, an dem die technischen und ästhetischen Möglichkeiten ihrer jeweiligen Gegenwart auf die Bühne kamen – von der aufwendigen Bühnenmaschinerie des Barock bis zu Film, Video und digitalen Bildwelten heute. Die Frage ist deshalb weniger, wie sich Oper an unsere Zeit anpasst, sondern was entsteht, wenn eine jahrhundertealte Kunstform mit den Ausdrucksmitteln unserer Gegenwart erzählt wird.</p>
+
+      <p>Die Psychologin Dr. Gloria Mark misst seit über zwei Jahrzehnten, wie lange Menschen ohne Ablenkung einer Aufgabe am Computer nachgehen. Dr. Mark ist emeritierte Professorin an der Universität von Kalifornien, Irvine, und Autorin des Buchs <em>Attention Span</em>. 2003 waren es im Schnitt zweieinhalb Minuten bis zum nächsten Fensterwechsel am Bildschirm. Inzwischen sind es 47 Sekunden. Auf einen Opernabend lässt sich diese Zahl nur bedingt übertragen, doch der Trend, den sie beschreibt, betrifft auch das Publikum im Zuschauer*innenraum.</p>
+
+      <p>Drei Stunden ein Bühnenbild, ohne Schnitt, ohne Blick aufs Handy: Für eine Generation, die mit Splitscreen und Kurzvideos aufgewachsen ist, ist das keine Selbstverständlichkeit mehr. Wie schafft man es, Oper nicht aussterben zu lassen, wenn TikToks, Reels und Splitscreens Alltag sind? Ob die Oper deshalb mehr Bildschirme benötigt oder eher das Gegenteil – künstlerische Reduktion als Gegenentwurf zur digitalen Reizüberflutung – ist unter Kulturschaffenden umstritten.</p>
+
+      <h2>Wie steht es um die Aufmerksamkeitsspanne der Gen Z?</h2>
+
+      <p>Ob die vielzitierte kurze Aufmerksamkeitsspanne der Generation Z Mythos oder Fakt ist, lässt sich bislang nicht eindeutig beantworten. Prof. Dr. Christian Montag, Professor an der University of Macau, ordnet den Begriff im Interview ein:</p>
+
+      <div class="quote-block">
+        <p>„Unter der Aufmerksamkeitsspanne könnte man die Dauer verstehen, in der man sich auf eine Sache konzentriert. Wie sich dieses Maß durch Digitalisierung verändert, ist eine häufig diskutierte Fragestellung, die aber unzureichend erforscht ist."</p>
+        <cite>Prof. Dr. Christian Montag, University of Macau</cite>
+      </div>
+
+      <p>Dr. Mark kommt in ihren Studien zu einem überraschenden Befund: Studierende haben dieselbe Aufmerksamkeitsspanne wie ältere Gruppen, die sie untersuchte. Einen klaren Generationenunterschied konnte sie also nicht bestätigen.</p>
+
+      <p>Dass Smartphones die Konzentration beeinflussen können, selbst wenn sie gar nicht benutzt werden, zeigt der sogenannte Brain-Drain-Effekt, den Prof. Montag anspricht:</p>
+
+      <div class="quote-block">
+        <p>„Bereits die physische Anwesenheit des Smartphones kann ablenken und die Aufmerksamkeit reduzieren. Eine Studie aus dem letzten Jahr konnte zudem zeigen, dass die objektiv gemessene Aufmerksamkeitsleistung nach zwei Wochen Nutzung des Smartphones ohne Internetverbindung zugenommen hat."</p>
+        <cite>Prof. Dr. Christian Montag, University of Macau</cite>
+      </div>
+
+      <p>Nicht mehr Reize, sondern weniger könnten der Konzentration demnach helfen.</p>
+
+      <h2>Mehr Bildschirme oder weniger Reize?</h2>
+
+      <p>Dr. Mark rät im Gespräch ausdrücklich davon ab, die Oper mit Splitscreens oder zusätzlichen Bildschirmen aufzurüsten: Das bediene nur die ohnehin schrumpfende Aufmerksamkeitsspanne, anstatt ihr entgegenzuwirken. Für Menschen, die Oper grundsätzlich nicht mögen, könnten Splitscreens zwar kurzfristig mehr Aufmerksamkeit erzeugen, weil sie an gewohnte Sehgewohnheiten anknüpfen. Die ästhetische Erfahrung gehe dabei ihrer Einschätzung nach jedoch verloren.</p>
+
+      <p>Auch Prof. Dr. Wolf-Dieter Ernst, Professor für Theaterwissenschaft an der Universität Bayreuth, warnt im Interview vor zu viel Medieneinsatz, allerdings aus einem anderen Grund:</p>
+
+      <div class="quote-block">
+        <p>„Man eignet sich damit Jugendsprache und die Medienwelt der Jugendlichen an. Die häufig über Jahrhunderte überlieferten Inhalte, Figuren und Geschichten ändern sich dadurch nicht wesentlich, sie werden nur anders verpackt."</p>
+        <cite>Prof. Dr. Wolf-Dieter Ernst, Universität Bayreuth</cite>
+      </div>
+
+      <p>Übrig bleibe im schlechtesten Fall eine peinliche Kopie. Sinnvoller sei es, Jugendliche selbst zu Wort kommen zu lassen und historische Stoffe gemeinsam mit ihnen zu erarbeiten.</p>
+
+      <p>Prof. Dr. Peter Marx, Professor für Theater- und Medienwissenschaft an der Universität zu Köln, sieht die Sache gelassener. Für ihn ist geteilte Aufmerksamkeit im Theater keine neue Erfindung, sondern eng mit dessen Geschichte verbunden:</p>
+
+      <div class="quote-block">
+        <p>„Das, was der Splitscreen sozusagen jetzt physisch umsetzt, haben wir eigentlich immer schon gehabt."</p>
+        <cite>Prof. Dr. Peter Marx, Universität zu Köln</cite>
+      </div>
+
+      <p>Als Beispiel nennt er eine Inszenierung von Mozarts <em>Zauberflöte</em> an der Komischen Oper Berlin, bei der das Bühnenbild aus einem projizierten Animationsfilm bestand, sowie die Arbeiten des Regisseurs William Kentridge, in denen Sänger- und Puppenkörper gemeinsam auf der Bühne stehen. Auch die Übertitelung – bei der das Publikum entscheiden muss, ob es den Text mitliest oder auf die Bühne blickt – sei letztlich nichts anderes als geteilte Aufmerksamkeit.</p>
+
+      <h2>Was macht ein Publikum aufmerksam?</h2>
+
+      <p>Trotz unterschiedlicher Bewertung der Technikfrage nähern sich die vier Expert*innen in einem Punkt an: Inhaltliche Relevanz und Vorbereitung wirken stärker als zusätzliche Reize. Dr. Mark empfiehlt Opernhäusern, jungen Menschen die Handlung zu erklären – etwa durch eine Vorbesprechung, Untertitel, Broschüren oder Erklärvideos. Wichtig sei zudem der soziale Aspekt danach: Man solle junge Menschen dazu bringen, die Oper vor Ort oder auf Social Media zu diskutieren. Wer wisse, dass er später mit Freund*innen über die Vorstellung sprechen kann, bleibe eher aufmerksam.</p>
+
+      <p>Prof. Marx rät aus ähnlichen Gründen dazu, mit kleinen, experimentellen Opernformen einzusteigen, statt gleich mit mehrteiligen Zyklen, und den Opernbesuch als gemeinsam erlebtes Ereignis zu verstehen:</p>
+
+      <div class="quote-block">
+        <p>„Theater ist vor allen Dingen ein soziales Event. Das ist das, was alle Studien auch zeigen."</p>
+        <cite>Prof. Dr. Peter Marx, Universität zu Köln</cite>
+      </div>
+
+      <p>Aufmerksamkeit ist also keine Frage der Dauer. Reels ziehen uns in ihren Bann, weil sie Situationen auf den Punkt bringen, in denen wir uns wiederfinden können. Mehrstündige Inszenierungen können uns dagegen fesseln, weil diese Erfahrung es erlaubt, sich gerade inmitten von immer mehr Stress die Zeit zu nehmen, hochkomplexen Themen in hochkomplexen Formen zu folgen. Beide nutzen die zur Verfügung stehenden technischen Möglichkeiten, um Fantasieräume zu öffnen.</p>
+
+    </div>
+
+    <div class="article-footer">
+      <span class="article-outlet">Erschienen in: GENZ Magazin, herausgegeben von der Landeszentrale für politische Bildung Hamburg</span>
+      <a href="index.html#projekte">← Zurück zum Portfolio</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sophia Johnsen</span>
+    <a href="index.html">sophiajohnsen.github.io</a>
+  </div>
+</footer>
+
+</body>
+</html>
